@@ -18,11 +18,11 @@ def get_departments():
             rows.append(f"{row.id},{row.department}")
         return rows
     
-# def load_departments(file):
-#     csv_data = BytesIO(file)
-#     cols = ["id","department"]
-#     df = pd.read_csv(csv_data,header= None, names= cols)
+def load_departments(file):
+    csv_data = BytesIO(file)
+    cols = ["id","department"]
+    df = pd.read_csv(csv_data,header= None, names= cols)
 
-#     connection = get_conn_alch()
-#     df.to_sql("departments", connection,schema= "dbo", if_exists= "append", index= False)
-#     return "ok"
+    connection = get_conn_alch()
+    df.to_sql("departments", connection,schema= "dbo", if_exists= "append", index= False)
+    return "ok"

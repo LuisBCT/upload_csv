@@ -18,11 +18,11 @@ def get_jobs():
             rows.append(f"{row.id},{row.job}")
         return rows
     
-# def load_jobs(file):
-#     csv_data = BytesIO(file)
-#     cols = ["id","job"]
-#     df = pd.read_csv(csv_data,header= None, names= cols)
+def load_jobs(file):
+    csv_data = BytesIO(file)
+    cols = ["id","job"]
+    df = pd.read_csv(csv_data,header= None, names= cols)
 
-#     connection = get_conn_alch()
-#     df.to_sql("jobs", connection,schema= "dbo", if_exists= "append", index= False)
-#     return "ok"
+    connection = get_conn_alch()
+    df.to_sql("jobs", connection,schema= "dbo", if_exists= "append", index= False)
+    return "ok"
