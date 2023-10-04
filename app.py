@@ -5,6 +5,7 @@ from routes.employees import employees, load_employees
 from routes.departments import departments,load_departments
 from routes.jobs import jobs,load_jobs
 from utils.quarters import quarters
+from utils.departments_hired import departments_hired
 
 app = FastAPI()
 
@@ -26,3 +27,4 @@ app.include_router(employees)
 app.include_router(departments)
 app.include_router(jobs)
 app.include_router(quarters)
+app.include_router(departments_hired)
