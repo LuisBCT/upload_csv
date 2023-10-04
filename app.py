@@ -1,8 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
-
+#from fastapi import APIRouter, HTMLResponse
+from fastapi.responses import HTMLResponse
 from routes.employees import employees, load_employees
 from routes.departments import departments,load_departments
 from routes.jobs import jobs,load_jobs
+from utils.quarters import quarters
 
 app = FastAPI()
 
@@ -23,3 +25,4 @@ async def upload(file: UploadFile = File(...), table:str = ""):
 app.include_router(employees)
 app.include_router(departments)
 app.include_router(jobs)
+app.include_router(quarters)
