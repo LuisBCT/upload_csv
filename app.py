@@ -9,7 +9,7 @@ from utils.departments_hired import departments_hired
 
 app = FastAPI()
 
-@app.post("/upload")
+@app.post("/upload",status_code=201)
 async def upload(file: UploadFile = File(...), table:str = ""):
     load_tables = {
         "hired_employees":load_employees,
